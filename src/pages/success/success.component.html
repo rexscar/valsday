@@ -1,0 +1,38 @@
+<div class="success-container">
+  <button 
+    mat-fab 
+    class="music-toggle"
+    (click)="toggleMusic()"
+    [attr.aria-label]="isPlaying ? 'Pause music' : 'Play music'">
+    <mat-icon>{{ isPlaying ? 'pause' : 'play_arrow' }}</mat-icon>
+  </button>
+  
+  <div class="floating-hearts">
+    <div class="floating-heart" *ngFor="let i of [1,2,3,4,5,6,7,8]" [style.animation-delay]="(i * 0.5) + 's'">💕</div>
+  </div>
+  
+  <div class="content">
+    <h1 class="celebration-text">Yay! 🎉</h1>
+    
+    <div class="image-container">
+      <div class="image-frame">
+        <img 
+          src="assets/images/hhgf.png" 
+          alt="Us Together"
+          class="couple-image"
+          onerror="this.src='https://via.placeholder.com/400x400/ff6669/ffffff?text=Add+Your+Photo+Here'">
+        <div class="frame-border"></div>
+      </div>
+    </div>
+    
+    <p class="love-message">
+      I love you L <<<333
+    </p>
+  </div>
+  
+  <div class="confetti-container">
+    <div class="confetti" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]" 
+         [style.left]="(i * 6) + '%'"
+         [style.animation-delay]="(i * 0.1) + 's'"></div>
+  </div>
+</div>

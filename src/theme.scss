@@ -1,0 +1,102 @@
+@use '@angular/material' as mat;
+
+// Define custom color palettes based on your provided colors
+$black-cherry-palette: (
+  50: #ffe5e5,
+  100: #ffcccc,
+  200: #ff9999,
+  300: #ff6666,
+  400: #ff3333,
+  500: #ff0000,
+  600: #cc0000,
+  700: #990000,
+  800: #660000,
+  900: #330000,
+  950: #240000,
+  contrast: (
+    50: rgba(0, 0, 0, 0.87),
+    100: rgba(0, 0, 0, 0.87),
+    200: rgba(0, 0, 0, 0.87),
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    950: white,
+  )
+);
+
+$strawberry-red-palette: (
+  50: #ffe5e6,
+  100: #ffcccd,
+  200: #ff999b,
+  300: #ff6669,
+  400: #ff3336,
+  500: #ff0004,
+  600: #cc0003,
+  700: #990003,
+  800: #660002,
+  900: #330001,
+  950: #240001,
+  contrast: (
+    50: rgba(0, 0, 0, 0.87),
+    100: rgba(0, 0, 0, 0.87),
+    200: rgba(0, 0, 0, 0.87),
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    950: white,
+  )
+);
+
+$pine-teal-palette: (
+  50: #eef6f5,
+  100: #ddeeeb,
+  200: #bbddd6,
+  300: #99ccc2,
+  400: #77bbad,
+  500: #55aa99,
+  600: #44887a,
+  700: #33665c,
+  800: #22443d,
+  900: #11221f,
+  950: #0c1815,
+  contrast: (
+    50: rgba(0, 0, 0, 0.87),
+    100: rgba(0, 0, 0, 0.87),
+    200: rgba(0, 0, 0, 0.87),
+    300: rgba(0, 0, 0, 0.87),
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    950: white,
+  )
+);
+
+// Create Material palettes
+$primary: mat.define-palette($strawberry-red-palette, 400);
+$accent: mat.define-palette($pine-teal-palette, 500);
+$warn: mat.define-palette($black-cherry-palette, 500);
+
+// Create the theme
+$theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+// Include theme styles
+@include mat.all-component-themes($theme);
